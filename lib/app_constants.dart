@@ -1,0 +1,7 @@
+import 'package:flutter/material.dart';
+import 'flutter_flow/flutter_flow_util.dart';
+
+abstract class FFAppConstants {
+  static const String boostsJson =
+      '[\n  {\n    \"id\": \"boost_001\",\n    \"title\": \"You Are Becoming Stronger\",\n    \"content\": \"Every step you take in faith rewrites the story of your life.\",\n    \"category\": \"Mindset\"\n  },\n  {\n    \"id\": \"boost_002\",\n    \"title\": \"You Are Not Behind\",\n    \"content\": \"You are arriving at the exact moment designed for you.\",\n    \"category\": \"Timing\"\n  },\n  {\n    \"id\": \"boost_003\",\n    \"title\": \"One Small Step Counts\",\n    \"content\": \"You don’t need to do everything today. Just take one clear step forward.\",\n    \"category\": \"Focus\"\n  },\n  {\n    \"id\": \"boost_004\",\n    \"title\": \"Breathe and Begin Again\",\n    \"content\": \"Pause. Inhale. Exhale. You’re allowed to reset and choose your next move with peace.\",\n    \"category\": \"Resilience\"\n  },\n  {\n    \"id\": \"boost_005\",\n    \"title\": \"Your Timing Is Not Broken\",\n    \"content\": \"What’s meant for you doesn’t miss you. Keep showing up with patience and courage.\",\n    \"category\": \"Timing\"\n  },\n  {\n    \"id\": \"boost_006\",\n    \"title\": \"Strength Is Built Quietly\",\n    \"content\": \"Consistency builds power. Keep going—your growth is real, even when it feels slow.\",\n    \"category\": \"Mindset\"\n  }\n]';
+}
