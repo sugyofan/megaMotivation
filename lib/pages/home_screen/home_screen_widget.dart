@@ -431,6 +431,21 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Generating share image...',
+                                          style: TextStyle(
+                                            color: Color(0xFFCFCFCF),
+                                            fontSize: 14.0,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 2000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
                                     await actions.shareAsImage(
                                       getJsonField(
                                         FFAppState().todayMotivation,

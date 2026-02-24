@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,7 +14,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'full_motivation_view_model.dart';
 export 'full_motivation_view_model.dart';
 
@@ -384,55 +382,47 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                         children: [
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Builder(
-                              builder: (context) => InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await Share.share(
-                                    valueOrDefault<String>(
-                                      functions.formatShareText(
-                                          widget!.motivationTitle,
-                                          widget!.motivationText),
-                                      'Shared Text',
-                                    ),
-                                    sharePositionOrigin:
-                                        getWidgetBoundingBox(context),
-                                  );
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FaIcon(
-                                        FontAwesomeIcons.share,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 28.0,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Generating share image...',
+                                      style: TextStyle(
+                                        color: Color(0xFFCFCFCF),
+                                        fontSize: 14.0,
                                       ),
-                                      Text(
-                                        'Share',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .textColor,
-                                              fontSize: 18.0,
-                                              letterSpacing: 0.0,
+                                    ),
+                                    duration: Duration(milliseconds: 2000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
+                                await actions.shareAsImage(
+                                  widget!.motivationText!,
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    FaIcon(
+                                      FontAwesomeIcons.share,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 28.0,
+                                    ),
+                                    Text(
+                                      'Share',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -442,9 +432,21 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                                                       .bodyMedium
                                                       .fontStyle,
                                             ),
-                                      ),
-                                    ],
-                                  ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .textColor,
+                                            fontSize: 18.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
