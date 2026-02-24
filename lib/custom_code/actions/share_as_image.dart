@@ -98,7 +98,7 @@ Future shareAsImage(String quoteText) async {
 
     // ── DRAW LOGO (centered) ──
     final double logoX = (w - logoImage.width.toDouble()) / 2;
-    final double logoY = h - 450;
+    final double logoY = h - 520;
     canvas.drawImage(logoImage, Offset(logoX, logoY), Paint());
 
     // ── DRAW "MegaMotivation" ──

@@ -44,13 +44,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ? Builder(
               builder: (context) => Container(
                 color: Colors.transparent,
-                child: Center(
-                  child: Image.asset(
-                    'assets/images/Screenshot_8.png',
-                    width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                    fit: BoxFit.fill,
-                  ),
+                child: Image.asset(
+                  'assets/images/splash.png',
+                  fit: BoxFit.cover,
                 ),
               ),
             )
@@ -63,13 +59,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ? Builder(
                   builder: (context) => Container(
                     color: Colors.transparent,
-                    child: Center(
-                      child: Image.asset(
-                        'assets/images/Screenshot_8.png',
-                        width: double.infinity,
-                        height: MediaQuery.sizeOf(context).height * 1.0,
-                        fit: BoxFit.fill,
-                      ),
+                    child: Image.asset(
+                      'assets/images/splash.png',
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )
