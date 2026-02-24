@@ -12,9 +12,14 @@ workflows:
         script: flutter build apk --release
       - name: Build AAB
         script: flutter build appbundle --release
-      - name: Build unsigned IPA
-        script: flutter build ipa --release --no-codesign
+      - name: Build iOS
+        script: |
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cp -r Runner.app Payload/
+          zip -r MegaMotivation.ipa Payload
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
-      - build/ios/ipa/*.ipa
+      - build/ios/iphoneos/MegaMotivation.ipa
