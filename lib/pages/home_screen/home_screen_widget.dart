@@ -161,7 +161,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         ),
                                         color: FlutterFlowTheme.of(context)
                                             .header2,
-                                        fontSize: 27.0,
+                                        fontSize: 32.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .displayLarge
@@ -187,7 +187,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       ),
                                       color:
                                           FlutterFlowTheme.of(context).header2,
-                                      fontSize: 18.0,
+                                      fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium

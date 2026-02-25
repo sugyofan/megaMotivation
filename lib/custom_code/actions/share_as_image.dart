@@ -30,11 +30,11 @@ Future shareAsImage(String quoteText) async {
 
     // ── LOAD LOGO IMAGE ──
     const String logoUrl =
-        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mega-motivation-ydk0kj/assets/yz6ah5wn6xvf/MegaMotivation.png'; // Replace with your uploaded flame logo URL
+        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/mega-motivation-ydk0kj/assets/32wd035yy3l4/logo-1.png'; // Replace with your uploaded flame logo URL
     final logoBytes = (await http.get(Uri.parse(logoUrl))).bodyBytes;
     final logoCodec = await ui.instantiateImageCodec(
       logoBytes,
-      targetWidth: 300,
+      targetWidth: 400,
     );
     final logoFrame = await logoCodec.getNextFrame();
     final ui.Image logoImage = logoFrame.image;
@@ -98,7 +98,7 @@ Future shareAsImage(String quoteText) async {
 
     // ── DRAW LOGO (centered) ──
     final double logoX = (w - logoImage.width.toDouble()) / 2;
-    final double logoY = h - 520;
+    final double logoY = h - 620;
     canvas.drawImage(logoImage, Offset(logoX, logoY), Paint());
 
     // ── DRAW "MegaMotivation" ──
