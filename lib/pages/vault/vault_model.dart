@@ -22,6 +22,8 @@ class VaultModel extends FlutterFlowModel<VaultWidget> {
   List<dynamic>? updatedResult;
   // Stores action output result for [Custom Action - getVaultedItems] action in IconButton widget.
   List<dynamic>? weekResult2;
+  // Stores action output result for [Custom Action - removeFromVault] action in IconButton widget.
+  List<dynamic>? updatedEarlyResult;
   // Stores action output result for [Custom Action - getVaultedItems] action in IconButton widget.
   List<dynamic>? earlierResult2;
 

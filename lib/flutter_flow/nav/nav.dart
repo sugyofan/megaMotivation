@@ -126,6 +126,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'categoryName',
               ParamType.String,
             ),
+            date: params.getParam(
+              'date',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(

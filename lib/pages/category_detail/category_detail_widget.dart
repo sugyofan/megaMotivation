@@ -233,6 +233,13 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                                       widget!.categoryName,
                                       ParamType.String,
                                     ),
+                                    'date': serializeParam(
+                                      getJsonField(
+                                        categoryItemItem,
+                                        r'''$['dateCreated']''',
+                                      ).toString(),
+                                      ParamType.String,
+                                    ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
                                     '__transition_info__': TransitionInfo(
@@ -247,7 +254,7 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                               child: Container(
                                 width: double.infinity,
                                 constraints: BoxConstraints(
-                                  minHeight: 180.0,
+                                  minHeight: 150.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Color(0xFFFFF7EC),
@@ -268,10 +275,10 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                                   ),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        14.0, 14.0, 14.0, 14.0),
+                                        14.0, 28.0, 14.0, 28.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -343,97 +350,6 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(1.0, 0.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                FullMotivationViewWidget
-                                                    .routeName,
-                                                queryParameters: {
-                                                  'motivationText':
-                                                      serializeParam(
-                                                    getJsonField(
-                                                      categoryItemItem,
-                                                      r'''$["content"]''',
-                                                    ).toString(),
-                                                    ParamType.String,
-                                                  ),
-                                                  'id': serializeParam(
-                                                    getJsonField(
-                                                      categoryItemItem,
-                                                      r'''$["id"]''',
-                                                    ).toString(),
-                                                    ParamType.String,
-                                                  ),
-                                                  'motivationTitle':
-                                                      serializeParam(
-                                                    getJsonField(
-                                                      categoryItemItem,
-                                                      r'''$["title"]''',
-                                                    ).toString(),
-                                                    ParamType.String,
-                                                  ),
-                                                  'categoryName':
-                                                      serializeParam(
-                                                    widget!.categoryName,
-                                                    ParamType.String,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  '__transition_info__':
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType
-                                                            .rightToLeft,
-                                                    duration: Duration(
-                                                        milliseconds: 80),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            text: '   Read More',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      4.0, 0.0, 16.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x00D4AF37),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    font: GoogleFonts.inter(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .fontStyle,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
                                           ),
                                         ),
                                       ],

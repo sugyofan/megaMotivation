@@ -233,7 +233,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                     ),
                                     if (FFAppState().weekVaultItems.length == 0)
                                       Text(
-                                        'No saved vaults.',
+                                        'No saved motivations yet.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -440,7 +440,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                                             child:
                                                                 FlutterFlowIconButton(
                                                               borderRadius: 8.0,
-                                                              buttonSize: 20.0,
+                                                              buttonSize: 48.0,
                                                               icon: FaIcon(
                                                                 FontAwesomeIcons
                                                                     .trashAlt,
@@ -504,21 +504,6 @@ class _VaultWidgetState extends State<VaultWidget> {
                                                                   );
                                                                   FFAppState().weekVaultItems = _model
                                                                       .weekResult2!
-                                                                      .toList()
-                                                                      .cast<
-                                                                          dynamic>();
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  _model.earlierResult2 =
-                                                                      await actions
-                                                                          .getVaultedItems(
-                                                                    FFAppState()
-                                                                        .categoryContents
-                                                                        .toList(),
-                                                                    'earlier',
-                                                                  );
-                                                                  FFAppState().earlierVaultItems = _model
-                                                                      .earlierResult2!
                                                                       .toList()
                                                                       .cast<
                                                                           dynamic>();
@@ -640,7 +625,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                     if (FFAppState().earlierVaultItems.length ==
                                         0)
                                       Text(
-                                        'No saved vaults.',
+                                        'No saved motivations yet.',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -846,7 +831,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                                                 borderRadius:
                                                                     8.0,
                                                                 buttonSize:
-                                                                    20.0,
+                                                                    48.0,
                                                                 icon: FaIcon(
                                                                   FontAwesomeIcons
                                                                       .trashAlt,
@@ -855,9 +840,70 @@ class _VaultWidgetState extends State<VaultWidget> {
                                                                       .primary,
                                                                   size: 18.0,
                                                                 ),
-                                                                onPressed: () {
-                                                                  print(
-                                                                      'IconButton pressed ...');
+                                                                onPressed:
+                                                                    () async {
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('Remove from Vault'),
+                                                                                content: Text('Are you sure you want to remove this from your vault?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('No'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Yes'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    _model.updatedEarlyResult =
+                                                                        await actions
+                                                                            .removeFromVault(
+                                                                      FFAppState()
+                                                                          .categoryContents
+                                                                          .toList(),
+                                                                      getJsonField(
+                                                                        earlyResultItem,
+                                                                        r'''$['id']''',
+                                                                      ).toString(),
+                                                                    );
+                                                                    FFAppState().categoryContents = _model
+                                                                        .updatedEarlyResult!
+                                                                        .toList()
+                                                                        .cast<
+                                                                            dynamic>();
+                                                                    safeSetState(
+                                                                        () {});
+                                                                    _model.earlierResult2 =
+                                                                        await actions
+                                                                            .getVaultedItems(
+                                                                      FFAppState()
+                                                                          .categoryContents
+                                                                          .toList(),
+                                                                      'earlier',
+                                                                    );
+                                                                    FFAppState().earlierVaultItems = _model
+                                                                        .earlierResult2!
+                                                                        .toList()
+                                                                        .cast<
+                                                                            dynamic>();
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+
+                                                                  safeSetState(
+                                                                      () {});
                                                                 },
                                                               ),
                                                             ),
