@@ -313,7 +313,8 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                                   children: [
                                     Divider(
                                       thickness: 1.0,
-                                      color: Color(0x4CD4AF37),
+                                      color: FlutterFlowTheme.of(context)
+                                          .dividerColor,
                                     ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -380,7 +381,9 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                color: Colors.white,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .white,
                                                 fontSize: 18.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
@@ -460,7 +463,9 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                color: Colors.white,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .white,
                                                 fontSize: 18.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
@@ -611,7 +616,8 @@ class _FullMotivationViewWidgetState extends State<FullMotivationViewWidget>
                                     content: Text(
                                       'Generating share image...',
                                       style: TextStyle(
-                                        color: Color(0xFFCFCFCF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .textColor,
                                         fontSize: 14.0,
                                       ),
                                     ),

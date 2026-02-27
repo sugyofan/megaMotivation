@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="MegaMotive"
+        android:label="MegaMotivation"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">

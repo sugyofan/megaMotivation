@@ -436,7 +436,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         content: Text(
                                           'Generating share image...',
                                           style: TextStyle(
-                                            color: Color(0xFFCFCFCF),
+                                            color: FlutterFlowTheme.of(context)
+                                                .textColor,
                                             fontSize: 14.0,
                                           ),
                                         ),
