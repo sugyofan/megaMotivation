@@ -560,7 +560,7 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 50.0, 24.0, 0.0),
                         child: Text(
-                          'Tap for Today’s Boost',
+                          '👉 Explore Motivations',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     font: GoogleFonts.inter(
