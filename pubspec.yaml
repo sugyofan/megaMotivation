@@ -1,4 +1,4 @@
-name: mega_motivation
+name: mega_motive
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -86,9 +86,8 @@ dev_dependencies:
 
 
 flutter_launcher_icons:
-  android: true
+  android: 'launcher_icon'
   ios: true
-  remove_alpha_ios: true
   web:
     generate: true
   image_path: 'assets/images/app_launcher_icon.png'

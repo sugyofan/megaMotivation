@@ -179,7 +179,7 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                       EdgeInsetsDirectional.fromSTEB(24.0, 50.0, 24.0, 20.0),
                   child: Container(
                     width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.75,
+                    height: MediaQuery.sizeOf(context).height * 0.73,
                     decoration: BoxDecoration(
                       color: Color(0x0014181B),
                     ),

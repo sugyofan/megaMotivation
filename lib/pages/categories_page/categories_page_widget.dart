@@ -186,7 +186,7 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget>
                 ),
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 0.78,
+                  height: MediaQuery.sizeOf(context).height * 0.76,
                   decoration: BoxDecoration(),
                   child: Stack(
                     children: [
