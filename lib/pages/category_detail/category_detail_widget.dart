@@ -184,154 +184,122 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                       color: Color(0x0014181B),
                     ),
                     alignment: AlignmentDirectional(-1.0, -1.0),
-                    child: Builder(
-                      builder: (context) {
-                        final categoryItem = FFAppState()
-                            .categoryDatailsData
-                            .map((e) => e)
-                            .toList();
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                      child: Builder(
+                        builder: (context) {
+                          final categoryItem = FFAppState()
+                              .categoryDatailsData
+                              .map((e) => e)
+                              .toList();
 
-                        return ListView.separated(
-                          padding: EdgeInsets.zero,
-                          scrollDirection: Axis.vertical,
-                          itemCount: categoryItem.length,
-                          separatorBuilder: (_, __) => SizedBox(height: 16.0),
-                          itemBuilder: (context, categoryItemIndex) {
-                            final categoryItemItem =
-                                categoryItem[categoryItemIndex];
-                            return InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  FullMotivationViewWidget.routeName,
-                                  queryParameters: {
-                                    'motivationText': serializeParam(
-                                      getJsonField(
-                                        categoryItemItem,
-                                        r'''$["content"]''',
-                                      ).toString(),
-                                      ParamType.String,
-                                    ),
-                                    'id': serializeParam(
-                                      getJsonField(
-                                        categoryItemItem,
-                                        r'''$["id"]''',
-                                      ).toString(),
-                                      ParamType.String,
-                                    ),
-                                    'motivationTitle': serializeParam(
-                                      getJsonField(
-                                        categoryItemItem,
-                                        r'''$["title"]''',
-                                      ).toString(),
-                                      ParamType.String,
-                                    ),
-                                    'categoryName': serializeParam(
-                                      widget!.categoryName,
-                                      ParamType.String,
-                                    ),
-                                    'date': serializeParam(
-                                      getJsonField(
-                                        categoryItemItem,
-                                        r'''$['dateCreated']''',
-                                      ).toString(),
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    '__transition_info__': TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.rightToLeft,
-                                      duration: Duration(milliseconds: 80),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                constraints: BoxConstraints(
-                                  minHeight: 150.0,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFF7EC),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(
-                                        2.0,
-                                        4.0,
+                          return ListView.separated(
+                            padding: EdgeInsets.zero,
+                            scrollDirection: Axis.vertical,
+                            itemCount: categoryItem.length,
+                            separatorBuilder: (_, __) => SizedBox(height: 16.0),
+                            itemBuilder: (context, categoryItemIndex) {
+                              final categoryItemItem =
+                                  categoryItem[categoryItemIndex];
+                              return InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    FullMotivationViewWidget.routeName,
+                                    queryParameters: {
+                                      'motivationText': serializeParam(
+                                        getJsonField(
+                                          categoryItemItem,
+                                          r'''$["content"]''',
+                                        ).toString(),
+                                        ParamType.String,
                                       ),
-                                      spreadRadius: 4.0,
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(18.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).header2,
+                                      'id': serializeParam(
+                                        getJsonField(
+                                          categoryItemItem,
+                                          r'''$["id"]''',
+                                        ).toString(),
+                                        ParamType.String,
+                                      ),
+                                      'motivationTitle': serializeParam(
+                                        getJsonField(
+                                          categoryItemItem,
+                                          r'''$["title"]''',
+                                        ).toString(),
+                                        ParamType.String,
+                                      ),
+                                      'categoryName': serializeParam(
+                                        widget!.categoryName,
+                                        ParamType.String,
+                                      ),
+                                      'date': serializeParam(
+                                        getJsonField(
+                                          categoryItemItem,
+                                          r'''$['dateCreated']''',
+                                        ).toString(),
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      '__transition_info__': TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
+                                        duration: Duration(milliseconds: 80),
+                                      ),
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  constraints: BoxConstraints(
+                                    minHeight: 150.0,
                                   ),
-                                ),
-                                child: Align(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        14.0, 28.0, 14.0, 28.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          getJsonField(
-                                            categoryItemItem,
-                                            r'''$["title"]''',
-                                          ).toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 22.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFF7EC),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33000000),
+                                        offset: Offset(
+                                          2.0,
+                                          4.0,
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 12.0),
-                                          child: Text(
+                                        spreadRadius: 4.0,
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    border: Border.all(
+                                      color:
+                                          FlutterFlowTheme.of(context).header2,
+                                    ),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          14.0, 28.0, 14.0, 28.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
                                             getJsonField(
                                               categoryItemItem,
-                                              r'''$["content"]''',
-                                            ).toString().maybeHandleOverflow(
-                                                  maxChars: 80,
-                                                  replacement: '…',
-                                                ),
-                                            maxLines: 2,
+                                              r'''$["title"]''',
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: GoogleFonts.inter(
-                                                    fontWeight: FontWeight.w500,
+                                                  font: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w600,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -340,10 +308,10 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                                                   ),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondary,
-                                                  fontSize: 16.0,
+                                                      .primary,
+                                                  fontSize: 22.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
+                                                  fontWeight: FontWeight.w600,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -351,16 +319,56 @@ class _CategoryDetailWidgetState extends State<CategoryDetailWidget> {
                                                           .fontStyle,
                                                 ),
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 12.0, 0.0, 12.0),
+                                            child: Text(
+                                              getJsonField(
+                                                categoryItemItem,
+                                                r'''$["content"]''',
+                                              ).toString().maybeHandleOverflow(
+                                                    maxChars: 80,
+                                                    replacement: '…',
+                                                  ),
+                                              maxLines: 2,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondary,
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        );
-                      },
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

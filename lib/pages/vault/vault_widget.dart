@@ -336,7 +336,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                                           )
                                                               .toString()
                                                               .maybeHandleOverflow(
-                                                                maxChars: 25,
+                                                                maxChars: 20,
                                                                 replacement:
                                                                     '…',
                                                               ),
@@ -653,7 +653,7 @@ class _VaultWidgetState extends State<VaultWidget> {
                                       ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 0.0),
+                                          0.0, 20.0, 0.0, 20.0),
                                       child: Builder(
                                         builder: (context) {
                                           final earlyResult = FFAppState()

@@ -82,6 +82,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: Container(
+                height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -96,10 +97,10 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -314,8 +315,11 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                 r'''$["title"]''',
                                               )?.toString(),
                                               'Today\'s Motivation',
+                                            ).maybeHandleOverflow(
+                                              maxChars: 30,
                                             ),
                                             textAlign: TextAlign.start,
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
@@ -361,10 +365,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                               )?.toString(),
                                               'You are not behind — life is not a race. What feels like delay is preparation. Stay steady.',
                                             ).maybeHandleOverflow(
-                                              maxChars: 100,
-                                              replacement: '…',
+                                              maxChars: 55,
                                             ),
-                                            maxLines: 3,
+                                            maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -396,6 +399,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           .bodyLarge
                                                           .fontStyle,
                                                 ),
+                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                       ],
