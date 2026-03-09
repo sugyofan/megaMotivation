@@ -100,7 +100,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -317,7 +317,6 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                               'Today\'s Motivation',
                                             ),
                                             textAlign: TextAlign.start,
-                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
@@ -336,7 +335,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  fontSize: 22.0,
+                                                  fontSize: 24.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
@@ -349,7 +348,6 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           .headlineMedium
                                                           .fontStyle,
                                                 ),
-                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                         Padding(
@@ -382,7 +380,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .midnightBlue,
-                                                  fontSize: 15.0,
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
