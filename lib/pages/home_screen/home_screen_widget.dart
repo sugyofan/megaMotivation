@@ -100,7 +100,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
@@ -307,7 +307,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 20.0, 20.0, 20.0),
+                                                  20.0, 16.0, 20.0, 16.0),
                                           child: Text(
                                             valueOrDefault<String>(
                                               getJsonField(
@@ -315,8 +315,6 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                 r'''$["title"]''',
                                               )?.toString(),
                                               'Today\'s Motivation',
-                                            ).maybeHandleOverflow(
-                                              maxChars: 30,
                                             ),
                                             textAlign: TextAlign.start,
                                             maxLines: 1,
@@ -338,7 +336,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  fontSize: 24.0,
+                                                  fontSize: 22.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
@@ -351,6 +349,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           .headlineMedium
                                                           .fontStyle,
                                                 ),
+                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                         Padding(
@@ -364,10 +363,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                 r'''$["content"]''',
                                               )?.toString(),
                                               'You are not behind — life is not a race. What feels like delay is preparation. Stay steady.',
-                                            ).maybeHandleOverflow(
-                                              maxChars: 55,
                                             ),
-                                            maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -386,7 +382,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .midnightBlue,
-                                                  fontSize: 16.0,
+                                                  fontSize: 15.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
@@ -399,7 +395,6 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           .bodyLarge
                                                           .fontStyle,
                                                 ),
-                                            overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
                                       ],
